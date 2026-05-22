@@ -24,11 +24,15 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    scroll-behavior: smooth;
+  /* Ini baris penyelamat untuk mengembalikan bentuk teksmu */
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif; 
+  
+  /* Kode cahaya aurora yang tadi tetap aman di sini */
+  background: linear-gradient(-45deg, #120e1f, #8b3dff, #0a0812, #4d96ff);
+  background-size: 400% 400%;
+  animation: gradientBG 8s ease infinite; 
+  min-height: 100vh;
+  color: #ffffff;
 }
 
 .container {
@@ -143,6 +147,7 @@ h2 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent; /* Membuat teks transparan agar gradien terlihat */
+    filter: drop-shadow(0px 6px 10px rgba(0, 0, 0, 0.7));
 }
 
 /* 4.2. Typing Animation Cursor */
@@ -1002,4 +1007,40 @@ footer {
 .btn-email:hover {
   background-color: #6a2bc4; /* Warna ungu sedikit lebih gelap saat di-hover */
   transform: translateY(-2px); /* Efek tombol sedikit terangkat */
+}
+
+/* --- TEMA AURORA DYNAMIC (PASTE DI BARIS PALING BAWAH) --- */
+body {
+  /* Warna aurora yang sedikit diterangkan agar gerakannya lebih terlihat */
+  background: linear-gradient(-45deg, #161625, #36295c, #140d26, #2a164d);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite; /* Kecepatan animasi 10 detik */
+  min-height: 100vh; /* Memastikan background menutupi layar penuh */
+  color: #ffffff;
+}
+
+/* Ini adalah mesin penggeraknya, jangan sampai tertinggal */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- TEMA AURORA (CAHAYA LEBIH TERANG & MENYALA) --- */
+body {
+  /* Di sinilah letak pengatur cahayanya! Warnanya dibuat lebih kontras dan terang */
+  background: linear-gradient(-45deg, #339487, #381747, #3b8c9b, #3d1938);
+  background-size: 400% 400%;
+  
+  /* Animasinya kita kembalikan jadi mulus (ease) dengan kecepatan 8 detik */
+  animation: gradientBG 8s ease infinite; 
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+/* Mesin penggeraknya kembali mulus */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
