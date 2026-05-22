@@ -1026,23 +1026,65 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* --- TEMA AURORA (CAHAYA LEBIH TERANG & MENYALA) --- */
+/* --- TEMA AURORA (DENGAN DUKUNGAN PENUH UNTUK HP) --- */
 body {
-  /* Di sinilah letak pengatur cahayanya! Warnanya dibuat lebih kontras dan terang */
-  background: linear-gradient(-45deg, #339487, #381747, #3b8c9b, #3d1938);
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(-45deg, #120e1f, #432e64, #0a0812, #4d96ff);
   background-size: 400% 400%;
   
-  /* Animasinya kita kembalikan jadi mulus (ease) dengan kecepatan 8 detik */
+  /* Kode WebKit khusus untuk memaksa browser HP memutar animasi */
+  -webkit-animation: gradientBG 8s ease infinite;
   animation: gradientBG 8s ease infinite; 
+  
   min-height: 100vh;
   color: #ffffff;
 }
 
-/* Mesin penggeraknya kembali mulus */
+/* Mesin Penggerak Khusus HP (iPhone & Android Safari/Chrome) */
+@-webkit-keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Mesin Penggerak Standar Laptop */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+/* --- KODE PENYELAMAT TAMPILAN HP (MOBILE RESPONSIVE) --- */
+
+@media screen and (max-width: 768px) {
+  /* 1. Menghapus tinggi paksa dan jarak kosong yang berlebihan antar bagian */
+  section, .hero, .about, .project {
+    min-height: auto !important; 
+    padding: 50px 20px !important; /* Mengurangi jarak atas-bawah jadi lebih rapi */
+    margin-bottom: 0 !important;
+  }
+
+  /* 2. Memaksa elemen yang bersebelahan menjadi numpuk atas-bawah */
+  /* Catatan: Kalau nama class kotak utamanya beda, tambahkan di sini */
+  .hero-container, .row, .container, .about-content {
+    display: flex !important;
+    flex-direction: column !important; /* Ini kunci utamanya! */
+    align-items: center !important;
+    text-align: center !important;
+    gap: 40px !important; /* Jarak pas antar tulisan dan kartu profil */
+  }
+
+  /* 3. Menyesuaikan ukuran kartu/gambar agar tidak kepotong di HP */
+  .profile-card, .card, img {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+  
+  /* 4. Menyesuaikan ukuran font jika terlalu besar di HP */
+  h1 {
+    font-size: 2.5rem !important;
+  }
 }
 
 
