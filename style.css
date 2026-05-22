@@ -1029,7 +1029,7 @@ body {
 /* --- TEMA AURORA (DENGAN DUKUNGAN PENUH UNTUK HP) --- */
 body {
   font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(-45deg, #120e1f, #432e64, #0a0812, #4d96ff);
+  background: linear-gradient(-45deg, #120e1f, #4ca59e, #0a0812, #4d96ff);
   background-size: 400% 400%;
   
   /* Kode WebKit khusus untuk memaksa browser HP memutar animasi */
